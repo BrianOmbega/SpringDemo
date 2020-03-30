@@ -4,5 +4,11 @@
    xsi:schemaLocation = "http://www.springframework.org/schema/beans
    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-  <bean id="triangle" class="org.ombega.Triangle"/>
+  <bean id="triangle" class="org.ombega.Triangle">
+  <property name="type" value="Equilateral"></property>
+  </bean>
+  
+  
+  
+  
 </beans>
