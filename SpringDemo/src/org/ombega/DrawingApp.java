@@ -16,7 +16,7 @@ public class DrawingApp {
 		//Triangle triangle = (Triangle) factory.getBean("triangle");
 		//Using ApplicationContext instead of BeanFactory which has additional features such as event notification and AOP
 		ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
-		Triangle triangle = (Triangle) context.getBean("triangle");
+		Triangle triangle = (Triangle) context.getBean("triangle2");
 		triangle.draw();
 		
   

@@ -7,7 +7,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
 
-/*implement the ApplicationContextAware interface to allpw Triangle.java use the "context"
+/*implement the ApplicationContextAware interface to allow Triangle.java use the "context"
   instantiated in DrawingApp.java*/
 public class Triangle implements ApplicationContextAware, BeanNameAware {
 	
