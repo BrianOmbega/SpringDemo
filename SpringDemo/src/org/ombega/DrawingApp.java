@@ -18,8 +18,8 @@ public class DrawingApp {
 		//Using ApplicationContext instead of BeanFactory which has additional features such as event notification and AOP
 		AbstractApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
 		context.registerShutdownHook();
-		Triangle triangle = (Triangle) context.getBean("triangle");
-		triangle.draw();
+		Shape shape = (Shape) context.getBean("triangle");
+		shape.draw();
 		
   
 	}

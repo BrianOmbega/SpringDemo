@@ -24,5 +24,10 @@
   <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
       <property name="locations" value="pointsconfig.properties"/>
   </bean>
+ <bean id="circle" class="org.ombega.Circle">
+  <property name="center" ref="pointA"/>
+  </bean>
+
+
   
 </beans>
