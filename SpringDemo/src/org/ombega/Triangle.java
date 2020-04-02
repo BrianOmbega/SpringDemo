@@ -3,13 +3,15 @@ package org.ombega;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanNameAware;
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
 
 /*implement the ApplicationContextAware interface to allow Triangle.java use the "context"
   instantiated in DrawingApp.java*/
-public class Triangle implements ApplicationContextAware, BeanNameAware {
+public class Triangle implements ApplicationContextAware, BeanNameAware, InitializingBean, DisposableBean {
 	
      private Point pointA;
      private Point pointB;
@@ -54,6 +56,18 @@ public class Triangle implements ApplicationContextAware, BeanNameAware {
 	@Override
 	public void setBeanName(String beanName) {
 		System.out.println("Bean name is:" + beanName);
+		
+	}
+
+	@Override
+	public void afterPropertiesSet() throws Exception {
+		System.out.println("InitializingBean init method called for Triangle");
+		
+	}
+
+	@Override
+	public void destroy() throws Exception {
+		System.out.println("DisposableBean destroy method called for Triangle");
 		
 	} 
 

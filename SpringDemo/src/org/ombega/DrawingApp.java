@@ -3,6 +3,7 @@ package org.ombega;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.context.*;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.FileSystemResource;
 
@@ -15,8 +16,9 @@ public class DrawingApp {
 		// the factory object has a method called getBean that takes in bean id
 		//Triangle triangle = (Triangle) factory.getBean("triangle");
 		//Using ApplicationContext instead of BeanFactory which has additional features such as event notification and AOP
-		ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
-		Triangle triangle = (Triangle) context.getBean("triangle2");
+		AbstractApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+		context.registerShutdownHook();
+		Triangle triangle = (Triangle) context.getBean("triangle");
 		triangle.draw();
 		
   
