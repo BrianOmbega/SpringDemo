@@ -10,8 +10,8 @@
   <property name="pointC" ref="pointC"/>
   </bean>
   <bean id="pointA" class="org.ombega.Point">
-  <property name="x" value="0"></property>
-  <property name="y" value="0"></property>
+  <property name="x" value="${pointA.pointX}"></property>
+  <property name="y" value="${pointA.pointY}"></property>
   </bean>
    <bean id="pointB" class="org.ombega.Point">
   <property name="x" value="-10"></property>
@@ -21,8 +21,8 @@
   <property name="x" value="5"></property>
   <property name="y" value="30"></property>
   </bean>  
-  
-  <bean class="org.ombega.DisplayNameBeanPostProcessor"/>
-  
+  <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+      <property name="locations" value="pointsconfig.properties"/>
+  </bean>
   
 </beans>
