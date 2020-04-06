@@ -4,29 +4,30 @@
    xsi:schemaLocation = "http://www.springframework.org/schema/beans
    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
    
-  <bean id="triangle" class="org.ombega.Triangle">
+<!--   <bean id="triangle" class="org.ombega.Triangle">
   <property name="pointA" ref="pointA"/>
   <property name="pointB" ref="pointB"/>
   <property name="pointC" ref="pointC"/>
-  </bean>
+  </bean> -->
   <bean id="pointA" class="org.ombega.Point">
-  <property name="x" value="${pointA.pointX}"></property>
-  <property name="y" value="${pointA.pointY}"></property>
+  <property name="x" value="0"></property>
+  <property name="y" value="0"></property>
   </bean>
-   <bean id="pointB" class="org.ombega.Point">
+  <!--  <bean id="pointB" class="org.ombega.Point">
   <property name="x" value="-10"></property>
   <property name="y" value="10"></property>
   </bean>
   <bean id="pointC" class="org.ombega.Point">
   <property name="x" value="5"></property>
   <property name="y" value="30"></property>
-  </bean>  
+  </bean> -->  
   <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
       <property name="locations" value="pointsconfig.properties"/>
   </bean>
  <bean id="circle" class="org.ombega.Circle">
   <property name="center" ref="pointA"/>
   </bean>
+  <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
 
 
   
